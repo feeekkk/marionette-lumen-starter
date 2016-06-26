@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1 id="marionettelumenstarter">Marionette Lumen Starter</h1>
+
+<p>A solid (opinionated) starting point for backbone marionette applications backed by a lumen API. Skip the tedious bits
+of setting up your nginx config, routers, authentication / authorization, etc. and get right into developing your app.</p>
+
+<p><strong>This project is still a work in progress. I have compiled some boilerplate pieces of my last few projects and will be finishing this up
+upon the start of my next project.</strong> Most pieces should work okay, but it may need a little more configuration / there may be a few errors. <em>Please
+open an issue if you come across any errors / need help getting up and running.</em></p>
+
+<h2 id="stack">Stack</h2>
+
+<ul>
+<li>Backbone 1.2</li>
+<li>Marionette 2.4</li>
+<li>RequireJS</li>
+<li>Lumen 5.2</li>
+<li>Foundation-sites 6</li>
+<li>backbone-relational</li>
+<li>backgrid</li>
+<li>useful-marionette-view-behaviors</li>
+<li>jwt-auth for token based api authentication</li>
+</ul>
+
+<h2 id="boilerplatefeatures">Boilerplate Features</h2>
+
+<h3 id="backend">Backend</h3>
+
+<ul>
+<li>authentication</li>
+<li>roles (user / admin)</li>
+<li>nginx configs</li>
+<li>(extremely barebones) admin dashboard</li>
+<li>prepared for service repository pattern</li>
+<li>query filters ready to be used with backgrid (based on laracasts lesson)</li>
+<li>basic migrations and factories</li>
+</ul>
+
+<h3 id="frontend">Frontend</h3>
+
+<ul>
+<li>user state</li>
+<li>routing</li>
+<li>Loginview</li>
+<li>Rootview</li>
+<li>useful-marionette-view-behaviors such as modal, off canvas, loading view, etc</li>
+<li>backbone relational for nested relations</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+<li><code>git clone</code> this repository</li>
+<li><code>bower install</code></li>
+<li><code>composer install</code></li>
+<li>create <code>.env</code> from <code>.env.example</code></li>
+<li>run the migrations <code>php artisan migrate</code></li>
+<li>edit <code>phpunit.xml</code> environment variables depending on your local setup</li>
+<li><code>rm -rf .git</code></li>
+<li><code>git init</code> your own repo!</li>
+<li>get to work without worrying about nginx/basic authentication!</li>
+</ul>
+
+<h2 id="somelightdocumentation...">Some light documentation&#8230;</h2>
+
+<p><em>More documentation to come&#8230;.</em></p>
+
+<h3 id="exceptions">Exceptions</h3>
+
+<ul>
+<li><strong>APIException</strong>: base exception for all lumen exceptions to extend from in order to be returned as JSON</li>
+<li><strong>ForbiddenAPIException</strong>: exception to throw when an action is forbidden</li>
+<li><strong>InvalidPermissionException</strong>: exception to throw when a user does not have the correct permissions to perform an action</li>
+</ul>
+
+<h3 id="controllers">Controllers</h3>
+
+<ul>
+<li><strong>Controller</strong>: includes helper authorize method for authorizing a user to access an eloquent collection of models.</li>
+<li><strong>AuthController</strong>: logic for authenticating a user via jwt</li>
+<li><strong>UserController</strong>: logic for creating / retrieving a user</li>
+</ul>
+
+<h3 id="filters">Filters</h3>
+
+<ul>
+<li><strong>QueryFilters</strong>: for searching a model via eloquence</li>
+</ul>
+
+<h3 id="middleware">Middleware</h3>
+
+<ul>
+<li><strong>UserAuthenticated</strong>: for parsing a user from the provided token. Requires a user to be logged in to access endpoint</li>
+</ul>
+
+<h3 id="traits">Traits</h3>
+
+<ul>
+<li><strong>Filterable</strong></li>
+<li><strong>HasRoles</strong></li>
+<li><strong>PaginationFilters</strong></li>
+<li><strong>SearchFilters</strong></li>
+</ul>
+
+<h3 id="models">Models</h3>
+
+<ul>
+<li><strong>Role</strong></li>
+<li><strong>User</strong></li>
+<li><strong>UserProfile</strong></li>
+</ul>
+
+<h3 id="policies">Policies</h3>
+
+<ul>
+<li><strong>BasePolicy</strong>: authorizes admins to perform any action</li>
+<li><strong>UserPolicy</strong>: ensures only a user can access themselves</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Feel free.</p>
+
+</body>
+</html>

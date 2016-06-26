@@ -1,0 +1,39 @@
+/*
+|--------------------------------------------------------------------------
+| mixins
+|--------------------------------------------------------------------------
+|
+| i like them.
+|
+*/
+@mixin screen {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	overflow: hidden;
+
+	.content {
+		max-width: $grid-row-width;
+		margin: auto;
+		height: 100%;
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| util classes
+|--------------------------------------------------------------------------
+|
+| hi.
+|
+*/
+.screen {
+	@include screen;
+	height: 100vh;
+}
+
+.stick {
+	position: fixed;
+	top: 0;
+	z-index: 1000000;
+	border-bottom: 2px solid $primary-color;
+}

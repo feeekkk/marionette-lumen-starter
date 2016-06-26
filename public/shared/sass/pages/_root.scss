@@ -1,0 +1,9 @@
+#main {
+	#content {
+		@include grid-column();
+	}
+}
+
+.sidebar-region {
+	background-color: $light-gray;
+}

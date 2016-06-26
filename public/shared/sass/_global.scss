@@ -1,0 +1,32 @@
+// global includes
+@import 'variables';
+@import 'settings.scss';
+
+@import '../../vendor/foundation-sites/scss/foundation';
+@include foundation-everything; // temp. probably ok if we use uncss
+
+@import 'pages/root';
+@import 'components/nprogress';
+@import 'components/modal';
+@import 'components/footer';
+@import 'utils';
+
+.off-canvas {
+	height: 100%;
+}
+
+.button.secondary-dark {
+	background-color: $secondary-dark-button-color;
+
+	&:hover {
+		background-color: lighten($secondary-dark-button-color, 10%);
+	}
+}
+
+#main-wrapper {
+	min-height: calc(100% - #{$footerHeight});
+}
+
+p {
+	color: $dark-text-color;
+}
